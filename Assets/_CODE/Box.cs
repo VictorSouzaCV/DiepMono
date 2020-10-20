@@ -2,14 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Box : MonoBehaviour, IDamageable {
+public class Box : MonoBehaviour, IDamageable, ISpawner {
 
 	public BoxData BoxData;
     Damageable damageComponent;
+    public Damageable DamageComponent
+    {
+        get
+        {
+            if (damageComponent == null)
+                damageComponent = new Damageable(BoxData.MaxHealth);
+            return damageComponent;
+        }
+    }
+    
 
 	void Start()
     {
-        damageComponent = new Damageable(BoxData.MaxHealth);
         damageComponent.OnDeath.AddListener(Break);
     }
 
@@ -18,9 +27,20 @@ public class Box : MonoBehaviour, IDamageable {
         damageComponent.Damage(damage);
     }
 
+    public Damageable GetDamageComponent()
+    {
+        return DamageComponent;
+    }
+
+    public void SpawnItem()
+    {
+        int randomID = UnityEngine.Random.Range(0, BoxData.DropPool.Count);
+        Instantiate(BoxData.DropPool[randomID], transform.position, BoxData.DropPool[randomID].transform.rotation);
+    }
+
     public void Break()
     {
-        Debug.Log("Box broke!");
+        SpawnItem();
         gameObject.SetActive(false);
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.PlayerLoop;
@@ -13,6 +13,16 @@ public class Character_Player : Character
         Shoot();
     }
 
+    void OnCollisionEnter (Collision col)
+    {
+        IDamageable otherDamageable = col.collider.GetComponent<IDamageable>();
+        if(col.collider.CompareTag("Box"))
+        {
+            TakeDamage(10f);
+            otherDamageable.TakeDamage(10f);
+        }
+    }
+
     public override void Aim()
     {
         AimTarget.position = CameraManager.Instance.ScreenToWorldPoint(Input.mousePosition);
@@ -23,7 +33,7 @@ public class Character_Player : Character
     public override void Move()
     {
         MoveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        transform.Translate(MoveDirection * MoveSpeed * Time.deltaTime, Space.World);
+        transform.Translate(MoveDirection * CharData.Speed * Time.deltaTime, Space.World);
     }
 
     public override void Shoot()
@@ -31,4 +41,4 @@ public class Character_Player : Character
         if (Input.GetMouseButton(0))
             base.Shoot();
     }
-}
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

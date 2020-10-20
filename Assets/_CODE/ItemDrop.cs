@@ -4,5 +4,18 @@ using UnityEngine;
 
 public class ItemDrop : MonoBehaviour 
 {
-	public virtual void Collect() { }
+	void OnTriggerEnter(Collider other)
+    {
+		Collect();
+    }
+
+	public virtual void Collect() 
+	{ 
+		Destroy(gameObject); 
+	}
+
+	void DestroyItem()
+    {
+		Destroy(gameObject);
+    }
 }

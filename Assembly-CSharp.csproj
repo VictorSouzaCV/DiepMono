@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_CODE\AmmoInterface.cs" />
      <Compile Include="Assets\_CODE\Box.cs" />
      <Compile Include="Assets\_CODE\BoxData.cs" />
      <Compile Include="Assets\_CODE\Bullet.cs" />
@@ -60,15 +61,40 @@
      <Compile Include="Assets\_CODE\CameraManager.cs" />
      <Compile Include="Assets\_CODE\Character.cs" />
      <Compile Include="Assets\_CODE\Character_Player.cs" />
+     <Compile Include="Assets\_CODE\CharacterData.cs" />
      <Compile Include="Assets\_CODE\Damageable.cs" />
      <Compile Include="Assets\_CODE\Delay.cs" />
+     <Compile Include="Assets\_CODE\GameManager.cs" />
      <Compile Include="Assets\_CODE\IDamageable.cs" />
+     <Compile Include="Assets\_CODE\ISpawner.cs" />
      <Compile Include="Assets\_CODE\ItemDrop.cs" />
+     <Compile Include="Assets\_CODE\ItemDrop_Ammo.cs" />
+     <Compile Include="Assets\_CODE\ItemDrop_HP.cs" />
+     <Compile Include="Assets\_CODE\ItemDrop_Weapon.cs" />
+     <Compile Include="Assets\_CODE\ItemFactory.cs" />
+     <Compile Include="Assets\_CODE\LifeInterface.cs" />
      <Compile Include="Assets\_CODE\Singleton.cs" />
      <Compile Include="Assets\_CODE\Weapon.cs" />
      <Compile Include="Assets\_CODE\Weapon_Pistol.cs" />
      <Compile Include="Assets\_CODE\WeaponController.cs" />
      <Compile Include="Assets\_CODE\WeaponData.cs" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/ProjetosAtuais/Monomyto/DiepMonomyto/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

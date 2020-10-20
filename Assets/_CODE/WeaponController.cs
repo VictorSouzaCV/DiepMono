@@ -4,11 +4,42 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour 
 {
-	public Weapon currentWeapon;
+	List<Weapon> Weapons = new List<Weapon>();
+
+    void Start()
+    {
+        foreach (Transform child in transform)
+        {
+            Weapon equippedWeapon = child.GetComponent<Weapon>();
+            if (equippedWeapon != null)
+                Weapons.Add(equippedWeapon);
+        }
+    }
 
 	public void Shoot(Vector3 direction)
     {
-		currentWeapon.Fire(direction);
+        foreach(Weapon w in Weapons)
+        {
+		    w.Fire(direction);
+        }
     }
-	
+
+	public void ReloadWeapons()
+    {
+        foreach (Weapon w in Weapons)
+        {
+            w.Reload();
+        }
+    }
+
+    public void UnlockWeapon(int weaponID)
+    {
+        foreach(Weapon w in Weapons)
+        {
+            if (w.WeaponData.Id == weaponID)
+                w.gameObject.SetActive(true);
+        }
+    }
+
+
 }

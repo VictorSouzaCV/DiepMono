@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
     
-    public Weapon Weapon;
     public BulletData BulletData;
+    [HideInInspector] public Weapon Weapon;
     float timeShot;
 
     void OnCollisionEnter(Collision col)

@@ -6,7 +6,6 @@ using UnityEngine;
 public class WeaponData : ScriptableObject 
 {
     public int Id;
-    public BulletData Bullet;
     public int Ammo; //Max bullets quantity
     public float FireInterval; 
 }

@@ -11,7 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de1bab881d0b824a9df758413448dd8, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
-  Id: 1
-  Bullet: {fileID: 11400000, guid: a2da00225741e7b4dab4202835ddd023, type: 2}
-  Ammo: 8
-  FireInterval: 0.05
+  Id: 0
+  Ammo: 12
+  FireInterval: 0.75

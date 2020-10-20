@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class CameraManager : Singleton<CameraManager> {
     public float AimDepth;
-    Camera camera;
+    Camera _camera;
     public Camera Camera
     {
         get
         {
-            if(camera == null)
+            if(_camera == null)
             {
-                camera = GetComponent<Camera>();
-                if (camera == null)
+                _camera = GetComponent<Camera>();
+                if (_camera == null)
                     Debug.LogError("I have no camera!");             
             }
-            return camera;
+            return _camera;
         }
     }
 

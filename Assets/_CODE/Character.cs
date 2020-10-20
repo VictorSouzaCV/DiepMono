@@ -3,13 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
 
-public class Character : MonoBehaviour 
+public class Character : MonoBehaviour,IDamageable
 {
-	public Vector3 AimDirection;
-    public Vector3 MoveDirection;
-    public float MoveSpeed = 1f;
+    public CharacterData CharData;
+	[HideInInspector] public Vector3 AimDirection;
+    [HideInInspector] public Vector3 MoveDirection;
     public WeaponController WeaponController;
 
+    Damageable damageComponent;
+    public Damageable DamageComponent
+    {
+        get
+        {
+            if (damageComponent == null)
+                damageComponent = new Damageable(CharData.MaxHealth);
+            return damageComponent;
+        }
+    }
+
+    void Awake()
+    {
+        damageComponent = new Damageable(CharData.MaxHealth);
+    }
 
     public virtual void Aim() { }
 	public virtual void Shoot() 
@@ -17,4 +32,13 @@ public class Character : MonoBehaviour
         WeaponController.Shoot(AimDirection);
     }
 	public virtual void Move() { }
+    public void TakeDamage(float damage)
+    {
+        damageComponent.Damage(damage);
+    }
+
+    public Damageable GetDamageComponent()
+    {
+        return DamageComponent;
+    }
 }

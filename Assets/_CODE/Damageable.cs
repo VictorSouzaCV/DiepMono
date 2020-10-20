@@ -8,18 +8,26 @@ public class Damageable
     [HideInInspector] public UnityEvent OnDamageTaken = new UnityEvent();
     [HideInInspector] public UnityEvent OnDeath = new UnityEvent(); //called when Life <= 0
 
-    public float Life;
+    public float MaxLife;
+    public float CurrentLife;
 
     public Damageable(float maxLife)
     {
-        Life = maxLife;
+        MaxLife = maxLife;
+        CurrentLife = MaxLife;
     }
 
 	public void Damage(float damage)
     {
-        Life -= damage;
+        CurrentLife -= damage;
         OnDamageTaken.Invoke();
-        if (Life <= 0)
+        if (CurrentLife <= 0)
             OnDeath.Invoke();
+    }
+
+    public void Heal()
+    {
+        CurrentLife = MaxLife;
+        OnDamageTaken.Invoke();
     }
 }
