@@ -1,0 +1,51 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Bullet : MonoBehaviour {
+    
+    public Weapon Weapon;
+    public BulletData BulletData;
+    float timeShot;
+
+    void OnCollisionEnter(Collision col)
+    {
+        IDamageable target = col.collider.GetComponent<IDamageable>();
+        if(target != null)
+            target.TakeDamage(BulletData.Damage);
+        DestroyBullet();
+    }
+
+    public void FireBullet(Vector3 direction)
+    {
+        transform.SetParent(null);
+        gameObject.SetActive(true);
+        timeShot = Time.time;
+        StartCoroutine(MoveBullet(direction));
+        StartCoroutine(LifetimeBullet());
+    }
+
+    IEnumerator MoveBullet(Vector3 moveDirection)
+    {
+        while(true)
+        {
+            transform.Translate(moveDirection * BulletData.Speed * Time.deltaTime, Space.World);
+            yield return null;
+        }
+    }
+
+    IEnumerator LifetimeBullet()
+    {
+        while(Time.time - timeShot < BulletData.Lifetime)
+        {
+            yield return Delay.centiSecond;
+        }
+        DestroyBullet();
+    }
+
+    public void DestroyBullet()
+    {
+        Weapon.ReturnBulletToPool(gameObject);
+        gameObject.SetActive(false);
+    }
+}
