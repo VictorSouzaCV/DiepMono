@@ -35,7 +35,7 @@ public class Character : MonoBehaviour,IDamageable
     public void TakeDamage(float damage)
     {
         damageComponent.Damage(damage);
-    }
+    }    
 
     public Damageable GetDamageComponent()
     {
