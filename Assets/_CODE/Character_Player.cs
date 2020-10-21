@@ -21,6 +21,11 @@ public class Character_Player : Character
             TakeDamage(10f);
             otherDamageable.TakeDamage(10f);
         }
+        if(col.collider.CompareTag("Enemy"))
+        {
+            TakeDamage(30f);
+            otherDamageable.TakeDamage(20f);
+        }
     }
 
     public override void Aim()

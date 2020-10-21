@@ -78,6 +78,7 @@
      <Compile Include="Assets\_CODE\ScoreManager.cs" />
      <Compile Include="Assets\_CODE\Singleton.cs" />
      <Compile Include="Assets\_CODE\TextInterface.cs" />
+     <Compile Include="Assets\_CODE\WanderBehaviour.cs" />
      <Compile Include="Assets\_CODE\Weapon.cs" />
      <Compile Include="Assets\_CODE\Weapon_Pistol.cs" />
      <Compile Include="Assets\_CODE\WeaponController.cs" />
