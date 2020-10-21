@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour {
     {
         while(Time.time - timeShot < BulletData.Lifetime)
         {
-            yield return Delay.centiSecond;
+            yield return Delay.CentiSecond;
         }
         DestroyBullet();
     }

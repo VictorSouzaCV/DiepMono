@@ -6,7 +6,14 @@ using UnityEngine.Experimental.PlayerLoop;
 public class Character_Player : Character 
 {
     public Transform AimTarget;
-    public override void ExecuteInput() 
+
+    public override void Die()
+    {
+        gameObject.SetActive(false);
+        GameManager.Instance.FinishGame();
+    }
+
+    public override void ExecuteInput()
     {
         Aim();
         Move();

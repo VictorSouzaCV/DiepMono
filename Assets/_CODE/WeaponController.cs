@@ -20,7 +20,8 @@ public class WeaponController : MonoBehaviour
     {
         foreach(Weapon w in Weapons)
         {
-		    w.Fire(direction);
+            if(w.gameObject.activeSelf)
+		        w.Fire(direction);
         }
     }
 
@@ -37,7 +38,9 @@ public class WeaponController : MonoBehaviour
         foreach(Weapon w in Weapons)
         {
             if (w.WeaponData.Id == weaponID)
+            {
                 w.gameObject.SetActive(true);
+            }
         }
     }
 

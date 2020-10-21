@@ -54,7 +54,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_CODE\AmmoInterface.cs" />
-     <Compile Include="Assets\_CODE\Box.cs" />
      <Compile Include="Assets\_CODE\BoxData.cs" />
      <Compile Include="Assets\_CODE\Bullet.cs" />
      <Compile Include="Assets\_CODE\BulletData.cs" />
@@ -63,20 +62,23 @@
      <Compile Include="Assets\_CODE\Character_Bot.cs" />
      <Compile Include="Assets\_CODE\Character_Player.cs" />
      <Compile Include="Assets\_CODE\CharacterData.cs" />
+     <Compile Include="Assets\_CODE\ContinuousFactory.cs" />
      <Compile Include="Assets\_CODE\Damageable.cs" />
      <Compile Include="Assets\_CODE\Delay.cs" />
+     <Compile Include="Assets\_CODE\EnemyCharacterData.cs" />
+     <Compile Include="Assets\_CODE\EnemyFactory.cs" />
      <Compile Include="Assets\_CODE\GameManager.cs" />
      <Compile Include="Assets\_CODE\IDamageable.cs" />
-     <Compile Include="Assets\_CODE\ISpawner.cs" />
      <Compile Include="Assets\_CODE\ItemDrop.cs" />
      <Compile Include="Assets\_CODE\ItemDrop_Ammo.cs" />
      <Compile Include="Assets\_CODE\ItemDrop_HP.cs" />
      <Compile Include="Assets\_CODE\ItemDrop_Weapon.cs" />
-     <Compile Include="Assets\_CODE\ItemFactory.cs" />
      <Compile Include="Assets\_CODE\LifeInterface.cs" />
      <Compile Include="Assets\_CODE\RotateBehaviour.cs" />
      <Compile Include="Assets\_CODE\ScoreManager.cs" />
      <Compile Include="Assets\_CODE\Singleton.cs" />
+     <Compile Include="Assets\_CODE\Spawner.cs" />
+     <Compile Include="Assets\_CODE\Spawner_Box.cs" />
      <Compile Include="Assets\_CODE\TextInterface.cs" />
      <Compile Include="Assets\_CODE\WanderBehaviour.cs" />
      <Compile Include="Assets\_CODE\Weapon.cs" />

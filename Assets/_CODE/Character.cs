@@ -21,9 +21,10 @@ public class Character : MonoBehaviour,IDamageable
         }
     }
 
-    void Awake()
+    public virtual void Awake()
     {
         damageComponent = new Damageable(CharData.MaxHealth);
+        damageComponent.OnDeath.AddListener(Die);
     }
 
     void Update()
@@ -48,4 +49,6 @@ public class Character : MonoBehaviour,IDamageable
     {
         return DamageComponent;
     }
+
+    public virtual void Die() {}
 }

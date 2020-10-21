@@ -6,10 +6,10 @@ public class ItemDrop : MonoBehaviour
 {
 	void OnTriggerEnter(Collider other)
     {
-		Collect();
+		Collect(other.GetComponent<Character>());
     }
 
-	public virtual void Collect() 
+	public virtual void Collect(Character character) 
 	{ 
 		Destroy(gameObject); 
 	}
