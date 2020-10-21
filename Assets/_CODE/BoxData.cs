@@ -6,5 +6,6 @@ using UnityEngine;
 public class BoxData : ScriptableObject 
 {
     public float MaxHealth;
+    public int Score = 10;
     public List<GameObject> DropPool = new List<GameObject>();
 }

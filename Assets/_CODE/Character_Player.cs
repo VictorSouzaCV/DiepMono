@@ -6,7 +6,7 @@ using UnityEngine.Experimental.PlayerLoop;
 public class Character_Player : Character 
 {
     public Transform AimTarget;
-    void Update() 
+    public override void ExecuteInput() 
     {
         Aim();
         Move();

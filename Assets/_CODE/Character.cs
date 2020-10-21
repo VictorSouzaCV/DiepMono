@@ -26,6 +26,13 @@ public class Character : MonoBehaviour,IDamageable
         damageComponent = new Damageable(CharData.MaxHealth);
     }
 
+    void Update()
+    {
+        ExecuteInput();
+    }
+
+    public virtual void ExecuteInput() { }
+
     public virtual void Aim() { }
 	public virtual void Shoot() 
     {

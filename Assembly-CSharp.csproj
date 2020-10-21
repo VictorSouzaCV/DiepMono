@@ -60,6 +60,7 @@
      <Compile Include="Assets\_CODE\BulletData.cs" />
      <Compile Include="Assets\_CODE\CameraManager.cs" />
      <Compile Include="Assets\_CODE\Character.cs" />
+     <Compile Include="Assets\_CODE\Character_Bot.cs" />
      <Compile Include="Assets\_CODE\Character_Player.cs" />
      <Compile Include="Assets\_CODE\CharacterData.cs" />
      <Compile Include="Assets\_CODE\Damageable.cs" />
@@ -73,7 +74,10 @@
      <Compile Include="Assets\_CODE\ItemDrop_Weapon.cs" />
      <Compile Include="Assets\_CODE\ItemFactory.cs" />
      <Compile Include="Assets\_CODE\LifeInterface.cs" />
+     <Compile Include="Assets\_CODE\RotateBehaviour.cs" />
+     <Compile Include="Assets\_CODE\ScoreManager.cs" />
      <Compile Include="Assets\_CODE\Singleton.cs" />
+     <Compile Include="Assets\_CODE\TextInterface.cs" />
      <Compile Include="Assets\_CODE\Weapon.cs" />
      <Compile Include="Assets\_CODE\Weapon_Pistol.cs" />
      <Compile Include="Assets\_CODE\WeaponController.cs" />

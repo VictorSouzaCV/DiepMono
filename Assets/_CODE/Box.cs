@@ -36,6 +36,7 @@ public class Box : MonoBehaviour, IDamageable, ISpawner {
     {
         int randomID = UnityEngine.Random.Range(0, BoxData.DropPool.Count);
         Instantiate(BoxData.DropPool[randomID], transform.position, BoxData.DropPool[randomID].transform.rotation);
+        ScoreManager.Instance.GainScore(BoxData.Score);
     }
 
     public void Break()
