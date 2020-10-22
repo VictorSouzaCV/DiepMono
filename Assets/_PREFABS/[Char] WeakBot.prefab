@@ -147,9 +147,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4316890827024556}
   - component: {fileID: 114353800950178742}
-  - component: {fileID: 114272296225213004}
   - component: {fileID: 65826708054126962}
   - component: {fileID: 54390626252775202}
+  - component: {fileID: 114324874056665336}
   m_Layer: 14
   m_Name: '[Char] WeakBot'
   m_TagString: Enemy
@@ -1523,7 +1523,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1148111600530844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.4631087, y: 0.053458847, z: -0.1904198}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4894553639132970}
@@ -2362,7 +2362,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1747080625593664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ee8bbddb93017a48be0827155eeb08b, type: 3}
+  m_Script: {fileID: 11500000, guid: d65da86fe67d8c743be594c02feb146e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114181926058349770
@@ -2373,7 +2373,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1424426181391718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ee8bbddb93017a48be0827155eeb08b, type: 3}
+  m_Script: {fileID: 11500000, guid: d65da86fe67d8c743be594c02feb146e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114202053986607766
@@ -2450,19 +2450,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114272296225213004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1148111600530844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 882bbf1e563282f4e89f411d161963c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeCanvas: {fileID: 223800708034889780}
-  lifeBar: {fileID: 114249561217612898}
 --- !u!114 &114323260032910360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2479,6 +2466,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114324874056665336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1148111600530844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4348c9b76c6d5f4438d098582c69eb36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeCanvas: {fileID: 223800708034889780}
+  lifeBar: {fileID: 114249561217612898}
 --- !u!114 &114353800950178742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2527,7 +2527,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1530440588977012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ee8bbddb93017a48be0827155eeb08b, type: 3}
+  m_Script: {fileID: 11500000, guid: d65da86fe67d8c743be594c02feb146e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114770393983058366

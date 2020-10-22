@@ -1,10 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Data", menuName = "Char", order = 1)]
-public class CharacterData : ScriptableObject
+namespace DiepMono.Data
 {
-    public float MaxHealth;
-    public float Speed;
+    [CreateAssetMenu(fileName = "Character", menuName = "DATA/Character")]
+    public class CharacterData : ScriptableObject
+    {
+        public float MaxHealth;
+        public float Speed;
+    } 
 }

@@ -1,33 +1,36 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using DiepMono.UI;
+using DiepMono.Utils;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ScoreManager : Singleton<ScoreManager>
+namespace DiepMono.Managers
 {
-    public TextInterface ScoreInterface;
-    public TextInterface GameOverScoreInterface;
-    int score = 0;
-    public int Score
+    public class ScoreManager : Singleton<ScoreManager>
     {
-        get
+        public TextUI ScoreInterface;
+        public TextUI GameOverScoreInterface;
+        int score = 0;
+        public int Score
         {
-            return score;
+            get
+            {
+                return score;
+            }
+            set
+            {
+                score = value;
+            }
         }
-        set
+
+        [HideInInspector] public UnityEvent OnScore = new UnityEvent();
+
+        public void GainScore(int newScore)
         {
-            score = value;
+            Score += newScore;
+            ScoreInterface.UpdateInterface(Score);
+            GameOverScoreInterface.UpdateInterface(Score);
+            OnScore.Invoke();
         }
-    }
 
-    [HideInInspector] public UnityEvent OnScore = new UnityEvent();
-
-    public void GainScore(int newScore)
-    {
-        Score += newScore;
-        ScoreInterface.UpdateInterface(Score);
-        GameOverScoreInterface.UpdateInterface(Score);
-        OnScore.Invoke();
-    }
-
+    } 
 }

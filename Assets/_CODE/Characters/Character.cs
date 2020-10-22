@@ -1,54 +1,57 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using DiepMono.Data;
+using DiepMono.Utils;
+using DiepMono.Weapons;
 using UnityEngine;
-using UnityEngine.Animations;
 
-public class Character : MonoBehaviour,IDamageable
+namespace DiepMono.Characters
 {
-    public CharacterData CharData;
-	[HideInInspector] public Vector3 AimDirection;
-    [HideInInspector] public Vector3 MoveDirection;
-    public WeaponController WeaponController;
-
-    Damageable damageComponent;
-    public Damageable DamageComponent
+    public class Character : MonoBehaviour, IDamageable
     {
-        get
+        public CharacterData CharData;
+        [HideInInspector] public Vector3 AimDirection;
+        [HideInInspector] public Vector3 MoveDirection;
+        public WeaponController WeaponController;
+
+        Damageable damageComponent;
+        public Damageable DamageComponent
         {
-            if (damageComponent == null)
-                damageComponent = new Damageable(CharData.MaxHealth);
-            return damageComponent;
+            get
+            {
+                if (damageComponent == null)
+                    damageComponent = new Damageable(CharData.MaxHealth);
+                return damageComponent;
+            }
         }
-    }
 
-    public virtual void Awake()
-    {
-        damageComponent = new Damageable(CharData.MaxHealth);
-        damageComponent.OnDeath.AddListener(Die);
-    }
+        public virtual void Awake()
+        {
+            damageComponent = new Damageable(CharData.MaxHealth);
+            damageComponent.OnDeath.AddListener(Die);
+        }
 
-    void Update()
-    {
-        ExecuteInput();
-    }
+        void Update()
+        {
+            ExecuteInput();
+        }
 
-    public virtual void ExecuteInput() { }
+        public virtual void ExecuteInput() { }
 
-    public virtual void Aim() { }
-	public virtual void Shoot() 
-    {
-        WeaponController.Shoot(AimDirection);
-    }
-	public virtual void Move() { }
-    public void TakeDamage(float damage)
-    {
-        damageComponent.Damage(damage);
-    }    
+        public virtual void Aim() { }
+        public virtual void Shoot()
+        {
+            WeaponController.Shoot(AimDirection);
+        }
+        public virtual void Move() { }
+        public void TakeDamage(float damage)
+        {
+            damageComponent.Damage(damage);
+        }
 
-    public Damageable GetDamageComponent()
-    {
-        return DamageComponent;
-    }
+        public Damageable GetDamageComponent()
+        {
+            return DamageComponent;
+        }
 
-    public virtual void Die() {}
+        public virtual void Die() { }
+    } 
 }

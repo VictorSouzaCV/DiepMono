@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 114650019499950930}
   - component: {fileID: 65109557270743380}
   - component: {fileID: 54885381918399628}
-  - component: {fileID: 114923394404641124}
+  - component: {fileID: 114208599502677282}
   m_Layer: 13
   m_Name: '[Box] YellowSquare'
   m_TagString: Box
@@ -105,7 +105,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1574535413882466}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.872}
+  m_LocalPosition: {x: 1.9676783, y: -0.1, z: -1.881602}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4376963589414224}
@@ -196,6 +196,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114208599502677282
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1574535413882466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4348c9b76c6d5f4438d098582c69eb36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeCanvas: {fileID: 223784187828898538}
+  lifeBar: {fileID: 114111229965443746}
 --- !u!114 &114521253377562262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -258,19 +271,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114923394404641124
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1574535413882466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 882bbf1e563282f4e89f411d161963c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeCanvas: {fileID: 223784187828898538}
-  lifeBar: {fileID: 114111229965443746}
 --- !u!212 &212223020081750132
 SpriteRenderer:
   m_ObjectHideFlags: 1

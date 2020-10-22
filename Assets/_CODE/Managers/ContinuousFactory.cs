@@ -1,24 +1,27 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ContinuousFactory : Spawner {
-
-	public float SpawnInterval;
-    public float IntervalChange;
-
-    void Start()
+namespace DiepMono.Managers
+{
+    public class ContinuousFactory : Spawner
     {
-        StartCoroutine(SpawnLoop());
-    }
 
-    IEnumerator SpawnLoop()
-    {
-        while (true)
+        public float SpawnInterval;
+        public float IntervalChange;
+
+        void Start()
         {
-            Spawn(SpawnLocations, true);
-            yield return new WaitForSeconds(SpawnInterval);
-            SpawnInterval = (SpawnInterval + IntervalChange <= 0) ?  0 : SpawnInterval + IntervalChange;
+            StartCoroutine(SpawnLoop());
         }
-    }
+
+        IEnumerator SpawnLoop()
+        {
+            while (true)
+            {
+                Spawn(SpawnLocations, true);
+                yield return new WaitForSeconds(SpawnInterval);
+                SpawnInterval = (SpawnInterval + IntervalChange <= 0) ? 0 : SpawnInterval + IntervalChange;
+            }
+        }
+    } 
 }

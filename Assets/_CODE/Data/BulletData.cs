@@ -1,10 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Data", menuName = "Bullet", order = 1)]
-public class BulletData : ScriptableObject 
+namespace DiepMono.Data
 {
-    public float Damage; //Damage per hit
-    public float Speed;
+    [CreateAssetMenu(fileName = "Bullet", menuName = "DATA/Bullet")]
+    public class BulletData : ScriptableObject
+    {
+        public float Damage; //Damage per hit
+        public float Speed;
+    } 
 }

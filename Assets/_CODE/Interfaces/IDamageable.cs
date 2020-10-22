@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public interface IDamageable
+﻿namespace DiepMono.Utils
 {
-	void TakeDamage(float damage);
-	Damageable GetDamageComponent();
+    public interface IDamageable
+    {
+        void TakeDamage(float damage);
+        Damageable GetDamageComponent();
+    } 
 }

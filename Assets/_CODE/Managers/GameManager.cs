@@ -1,27 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using DiepMono.Characters;
+using DiepMono.Utils;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class GameManager : Singleton<GameManager> 
+namespace DiepMono.Managers
 {
-    public UnityEvent OnGameOver = new UnityEvent();
-    public Character Player;   
-
-    void Update()
+    public class GameManager : Singleton<GameManager>
     {
-        if (Input.GetKeyDown(KeyCode.R))
-            RestartGame();
-    }
+        public UnityEvent OnGameOver = new UnityEvent();
+        public Character Player;
 
-    void RestartGame()
-    {
-        SceneManager.LoadScene(0);
-    }
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+                RestartGame();
+        }
 
-    public void FinishGame()
-    {
-        OnGameOver.Invoke();
-    }
+        void RestartGame()
+        {
+            SceneManager.LoadScene(0);
+        }
+
+        public void FinishGame()
+        {
+            OnGameOver.Invoke();
+        }
+    } 
 }

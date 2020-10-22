@@ -1,11 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Data", menuName = "Weapon", order = 1)]
-public class WeaponData : ScriptableObject 
+namespace DiepMono.Data
 {
-    public int Id;
-    public int Ammo; //Max bullets quantity
-    public float FireInterval; 
+    [CreateAssetMenu(fileName = "Weapon", menuName = "DATA/Weapon")]
+    public class WeaponData : ScriptableObject
+    {
+        public int Id;
+        public int Ammo; //Max bullets quantity
+        public float FireInterval;
+    } 
 }

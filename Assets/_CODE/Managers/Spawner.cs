@@ -1,35 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour 
+namespace DiepMono.Managers
 {
-	public List<GameObject> ItemPool = new List<GameObject>();
-	public List<Transform> SpawnLocations = new List<Transform>();
-	int lastSpawnLocationID;
-	public virtual void Spawn()
+    public class Spawner : MonoBehaviour
     {
-		GameObject spawnedItem = ItemPool[Random.Range(0, ItemPool.Count)];
-		if (spawnedItem == null)
-			return;
-		Instantiate(spawnedItem, transform.position, spawnedItem.transform.rotation);
-	}
+        public List<GameObject> ItemPool = new List<GameObject>();
+        public List<Transform> SpawnLocations = new List<Transform>();
+        int lastSpawnLocationID;
 
-	public virtual void Spawn(List<Transform> locations, bool preventSameLocation = true)
-	{
-		GameObject spawnedItem = ItemPool[Random.Range(0, ItemPool.Count)];
-		if (spawnedItem == null)
-			return;
-		int locationID = Random.Range(0, locations.Count);
-		if(preventSameLocation && locationID == lastSpawnLocationID)
+        public virtual void Spawn()
         {
-			do
-			{
-				locationID = Random.Range(0, locations.Count);
-			} while (locationID == lastSpawnLocationID);
+            GameObject spawnedItem = ItemPool[Random.Range(0, ItemPool.Count)];
+            if (spawnedItem == null)
+                return;
+            Instantiate(spawnedItem, transform.position, spawnedItem.transform.rotation);
         }
-		lastSpawnLocationID = locationID;
-		Transform spawnLocation = locations[locationID];
-		Instantiate(spawnedItem, spawnLocation.position, spawnedItem.transform.rotation);
-	}
+
+        public virtual void Spawn(List<Transform> locations, bool preventSameLocation = true)
+        {
+            GameObject spawnedItem = ItemPool[Random.Range(0, ItemPool.Count)];
+            if (spawnedItem == null)
+                return;
+            int locationID = Random.Range(0, locations.Count);
+            if (preventSameLocation && locationID == lastSpawnLocationID)
+            {
+                do
+                {
+                    locationID = Random.Range(0, locations.Count);
+                } while (locationID == lastSpawnLocationID);
+            }
+            lastSpawnLocationID = locationID;
+            Transform spawnLocation = locations[locationID];
+            Instantiate(spawnedItem, spawnLocation.position, spawnedItem.transform.rotation);
+        }
+    } 
 }

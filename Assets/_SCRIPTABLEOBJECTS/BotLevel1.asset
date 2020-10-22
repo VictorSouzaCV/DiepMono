@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9518c60a283764cb50f660543936c2, type: 3}
   m_Name: BotLevel1
   m_EditorClassIdentifier: 
-  MaxHealth: 50
+  MaxHealth: 51
   Speed: 0.5
   Distance: 3
   TimeChange: 1

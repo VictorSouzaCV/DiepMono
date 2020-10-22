@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class Damageable
 {
     [HideInInspector] public UnityEvent OnDamageTaken = new UnityEvent();
-    [HideInInspector] public UnityEvent OnDeath = new UnityEvent(); //called when Life <= 0
+    [HideInInspector] public UnityEvent OnDeath = new UnityEvent(); //called when CurrentLife <= 0
 
     public float MaxLife;
     public float CurrentLife;
