@@ -15,11 +15,18 @@ namespace DiepMono.Managers
         {
             if (Input.GetKeyDown(KeyCode.R))
                 RestartGame();
+            if (Input.GetKeyDown(KeyCode.Escape))
+                QuitGame();
         }
 
         void RestartGame()
         {
             SceneManager.LoadScene(0);
+        }
+
+        void QuitGame()
+        {
+            Application.Quit();
         }
 
         public void FinishGame()

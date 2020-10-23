@@ -7,7 +7,6 @@ namespace DiepMono.UI
     [RequireComponent(typeof(IDamageable))]
     public class LifeUI : MonoBehaviour
     {
-        [SerializeField] Canvas lifeCanvas;
         [SerializeField] Image lifeBar;
         Damageable damageable;
 
@@ -19,8 +18,6 @@ namespace DiepMono.UI
 
         void ReduceLife()
         {
-            if (!lifeCanvas.enabled)
-                lifeCanvas.enabled = true;
             lifeBar.fillAmount = damageable.CurrentLife / damageable.MaxLife;
         }
     } 

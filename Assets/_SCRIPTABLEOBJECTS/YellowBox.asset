@@ -16,5 +16,6 @@ MonoBehaviour:
   DropPool:
   - {fileID: 1909031171939538, guid: c060e5baf8d148641b6aaeb231cb29c6, type: 2}
   - {fileID: 1587697646504942, guid: 20b4d2dcda9f5ca4fbe08a37623d1e56, type: 2}
+  - {fileID: 1587697646504942, guid: 20b4d2dcda9f5ca4fbe08a37623d1e56, type: 2}
+  - {fileID: 1402385941351240, guid: 26ebb238dbd9d6f44a3e87cc074a593f, type: 2}
   - {fileID: 1801146847004086, guid: 273219e9fd35ad545b8c9149b3588c71, type: 2}
-  - {fileID: 0}

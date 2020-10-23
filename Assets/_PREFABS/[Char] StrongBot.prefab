@@ -2481,6 +2481,9 @@ MonoBehaviour:
   AimDirection: {x: 0, y: 0, z: 0}
   MoveDirection: {x: 0, y: 0, z: 0}
   WeaponController: {fileID: 114010240139407574}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 3072
 --- !u!114 &114498270833305528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2492,7 +2495,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4348c9b76c6d5f4438d098582c69eb36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeCanvas: {fileID: 223800708034889780}
   lifeBar: {fileID: 114249561217612898}
 --- !u!114 &114563291783517002
 MonoBehaviour:
@@ -5684,7 +5686,7 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1998769086383682}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 0}

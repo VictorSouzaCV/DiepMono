@@ -15,8 +15,7 @@ MonoBehaviour:
   Score: 10
   DropPool:
   - {fileID: 1148111600530844, guid: 1be0397107244634c915034a8427387c, type: 2}
-  - {fileID: 1587697646504942, guid: 20b4d2dcda9f5ca4fbe08a37623d1e56, type: 2}
   - {fileID: 1587697646504942, guid: 68a71721b48ad2e4a829681a9b18ff1a, type: 2}
-  - {fileID: 1574535413882466, guid: dda2807069d0f344384a8bbf478fa6a4, type: 2}
-  - {fileID: 1909031171939538, guid: c060e5baf8d148641b6aaeb231cb29c6, type: 2}
   - {fileID: 1801146847004086, guid: 273219e9fd35ad545b8c9149b3588c71, type: 2}
+  - {fileID: 1574535413882466, guid: dda2807069d0f344384a8bbf478fa6a4, type: 2}
+  - {fileID: 1587697646504942, guid: 68a71721b48ad2e4a829681a9b18ff1a, type: 2}

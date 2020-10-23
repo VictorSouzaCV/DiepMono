@@ -1,5 +1,6 @@
 ﻿using DiepMono.Data;
 using DiepMono.Managers;
+using System.Collections;
 using UnityEngine;
 
 namespace DiepMono.Characters
@@ -17,7 +18,7 @@ namespace DiepMono.Characters
 
         float timeFlag;
         Vector3 ghostTarget;
-        int layerMask;
+        public LayerMask layerMask;
 
         public override void Awake()
         {
@@ -27,8 +28,6 @@ namespace DiepMono.Characters
 
         void Start()
         {
-            layerMask = 1 << 14;
-            layerMask = ~layerMask; //Rays won't collide with Enemy layer
             state = BotState.WANDER;
             timeFlag = Time.time;
             NewWanderTarget();
@@ -95,7 +94,10 @@ namespace DiepMono.Characters
         {
             if (Time.time - timeFlag >= EnemyData.TimeChange)
             {
-                NewWanderTarget();
+                if (!IsFacingWall())
+                    NewWanderTarget();
+                else
+                    NewWanderTarget(180f);
                 timeFlag = Time.time;
             }
             Vector3 vel = Vector3.Normalize(transform.forward);
@@ -113,6 +115,7 @@ namespace DiepMono.Characters
             transform.LookAt(ghostTarget);
         }
 
+
         void NewWanderTarget()
         {
             float angle = UnityEngine.Random.Range(-EnemyData.Teta / 2, EnemyData.Teta / 2);
@@ -125,10 +128,40 @@ namespace DiepMono.Characters
             ghostTarget = new Vector3(newPos.x * EnemyData.Distance, 0, newPos.z * EnemyData.Distance);
         }
 
+        void NewWanderTarget(float angle)
+        {
+            angle *= Mathf.Deg2Rad;
+            ghostTarget = this.transform.forward.normalized;
+            Vector3 newPos = new Vector3(ghostTarget.x * Mathf.Cos(angle) - ghostTarget.z * Mathf.Sin(angle),
+                                        0,
+                                        ghostTarget.x * Mathf.Sin(angle) + ghostTarget.z * Mathf.Cos(angle));
+
+            ghostTarget = new Vector3(newPos.x * EnemyData.Distance, 0, newPos.z * EnemyData.Distance);
+        }
+
+        void TurnAround()
+        {
+            NewWanderTarget(180f);
+        }
+
         void SearchPlayer()
         {
             EyeSearchPlayer();
             SoundSearchPlayer();
+        }
+
+        bool IsFacingWall()
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 1f, layerMask))
+            {
+                if (hit.transform.CompareTag("Wall"))
+                    return true;
+                else
+                    return false;
+            }
+            else
+                return false;
         }
 
         void EyeSearchPlayer()
